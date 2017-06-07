@@ -52,3 +52,25 @@ Date: Wed, 07 Jun 2017 17:20:15 GMT
 
 <AddressBook><contacts><id>1</id><name>John</name><email>john@xyz.com</email><mobile>9902XXXXXX</mobile><contactType>WORK</contactType></contacts><contacts><id>1</id><name>John</name><email>john@xyz.com</email><mobile>9902XXXXXX</mobile><contactType>WORK</contactType></contacts><contacts><id>1</id><name>John</name><email>john@xyz.com</email><mobile>9902XXXXXX</mobile><contactType>WORK</contactType></contacts></AddressBook>
 ```
+---
+#### with accept header in protobuf format
+curl -i -H 'Accept: application/x-protobuf' 'http://localhost:8080/contacts'
+```
+HTTP/1.1 200 
+X-Protobuf-Schema: contacts.proto
+X-Protobuf-Message: src.main.java.AddressBook
+Content-Type: application/x-protobuf;charset=UTF-8
+Content-Length: 114
+Date: Wed, 07 Jun 2017 17:32:42 GMT
+
+
+John
+    john@xyz.com"
+9902XXXXXX(
+John
+    john@xyz.com"
+9902XXXXXX(
+John
+    john@xyz.com"
+9902XXXXXX(
+```
