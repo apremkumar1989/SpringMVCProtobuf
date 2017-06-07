@@ -30,3 +30,25 @@ John
 John
     john@xyz.com"
 ```
+---
+#### with accept header in json format
+curl -i -H 'Accept: application/json' 'http://localhost:8080/contacts'
+```
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Wed, 07 Jun 2017 17:18:33 GMT
+
+{"contacts": [{"id": 1,"name": "John","email": "john@xyz.com","mobile": "9902XXXXXX","contactType": "WORK"},{"id": 1,"name": "John","email": "john@xyz.com","mobile": "9902XXXXXX","contactType": "WORK"},{"id": 1,"name": "John","email": "john@xyz.com","mobile": "9902XXXXXX","contactType": "WORK"}]}
+```
+---
+#### with accept header in xml format
+curl -i -H 'Accept: application/xml' 'http://localhost:8080/contacts'
+```
+HTTP/1.1 200 
+Content-Type: application/xml
+Transfer-Encoding: chunked
+Date: Wed, 07 Jun 2017 17:20:15 GMT
+
+<AddressBook><contacts><id>1</id><name>John</name><email>john@xyz.com</email><mobile>9902XXXXXX</mobile><contactType>WORK</contactType></contacts><contacts><id>1</id><name>John</name><email>john@xyz.com</email><mobile>9902XXXXXX</mobile><contactType>WORK</contactType></contacts><contacts><id>1</id><name>John</name><email>john@xyz.com</email><mobile>9902XXXXXX</mobile><contactType>WORK</contactType></contacts></AddressBook>
+```
